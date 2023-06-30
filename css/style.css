@@ -1,0 +1,706 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #f5f5f7; /*black background : #1d1d1f */
+  /*add font family later */
+}
+
+@font-face {
+  font-family: myFont;
+  src: url(/fonts/OptimaEL-Roman.ttf); /*THis ttf file needs to be in the same folder as
+  rest of the web pages */
+}
+
+a {
+  text-decoration: none;
+  font-family: myFont;
+}
+
+.shop-button {
+  font-weight: 500;
+  padding: 12px 22px;
+  background-color: transparent;
+  color: #1d1d1f;
+  border-radius: 10px;
+  border: 1px solid #1d1d1f;
+  transition: 0.2s;
+  font-family: myFont;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.shop-button:hover {
+  background-color: #db1d4d;
+  color: #f5f5f7;
+}
+
+.navbar {
+  height: 90px;
+  background-color: #f5f5f7;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*font family for NAVBAR ONLY, select from the gdrive  given*/
+}
+
+.navbar .logo a {
+  /*Refers to Estee Lauder beside the logo*/
+  font-size: 24px;
+  font-weight: 700;
+  color: #1d1d1f;
+  margin-left: 12px;
+}
+
+.menu-index {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.menu-links-index {
+  display: flex;
+  gap: 24px;
+  border-right: 1px solid #1d1d1f;
+  padding-inline: 24px;
+}
+
+.menu-links-index a:hover {
+  color: #db1d4d;
+}
+
+.menu-links-index a {
+  font-weight: 500;
+  color: #1d1d1f;
+  padding: 8px 16px;
+}
+
+.hero {
+  background-image: url(/photos/estee\ 30.jpg);
+  height: 500px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f5f5f7;
+  padding: 20px;
+  font-family: myFont;
+}
+
+.aboutPage-hero {
+  background-image: url(/photos/estee\ 30.jpg);
+  height: 200px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f5f5f7;
+  padding: 20px;
+  font-family: myFont;
+}
+
+.hero-shop-button {
+  font-weight: 500;
+  padding: 12px 22px;
+  background-color: transparent;
+  color: #f5f5f7;
+  border-radius: 10px;
+  border: 1px solid #f5f5f7;
+  transition: 0.2s;
+  font-family: myFont;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.hero-shop-button:hover {
+  background-color: #db1d4d;
+  color: #f5f5f7;
+}
+
+.new-arrivals {
+  text-align: center;
+  padding: 20px;
+  height: 20px;
+  font-family: myFont;
+}
+
+.new-arrivals-products {
+  padding: 50px;
+}
+
+.airy-lotion-container {
+  width: 300px;
+  height: 400px;
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background: url(/photos/airy-lotion\ estee\ 32.jpg);
+  background-color: #1d1d1f;
+  background-size: cover;
+  /* cursor: pointer; */
+  border-radius: 10px;
+
+  -webkit-box-shadow: 0 0 5px #1d1d1f;
+  box-shadow: 0 0 5px #1d1d1f;
+}
+
+.airy-lotion-overlay {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+
+  background: #db1d4d;
+  color: #f5f5f7;
+  opacity: 0;
+  transition: all 0.5s;
+
+  font-family: regularText;
+}
+
+@font-face {
+  font-family: regularText;
+  src: url(/fonts/regular-text-OptimaEL-Text.ttf);
+}
+
+/* .airy-lotion-items {
+  padding-left: 30px;
+  letter-spacing: 3px;
+} */
+
+.airy-lotion-items-head {
+  font-size: 30px;
+  line-height: 40px;
+
+  transform: translateY(40px);
+  transition: all 0.7s;
+
+  padding-left: 30px;
+  letter-spacing: 3px;
+}
+
+.airy-lotion-items-price {
+  font-size: 22px;
+  line-height: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s;
+
+  padding-left: 30px;
+  letter-spacing: 3px;
+}
+
+.airy-lotion-container:hover .airy-lotion-overlay {
+  opacity: 1;
+  border-radius: 10px;
+  & .airy-lotion-items-head {
+    transform: translateY(0px);
+  }
+  & .airy-lotion-items-price {
+    transform: translateY(0px);
+    transition-delay: 0.4s;
+    opacity: 1;
+  }
+}
+
+.new-arrivals-products {
+  display: flex;
+}
+
+/* foam cleanser */
+.foam-cleanser-container {
+  width: 300px;
+  height: 400px;
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background: url(/photos/foamCleanse-estee\ 33.jpg);
+  background-color: #1d1d1f;
+  background-size: cover;
+  /* cursor: pointer; */
+  border-radius: 10px;
+
+  -webkit-box-shadow: 0 0 5px #1d1d1f;
+  box-shadow: 0 0 5px #1d1d1f;
+}
+
+.foam-cleanser-overlay {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+
+  background: #db1d4d;
+  color: #f5f5f7;
+  opacity: 0;
+  transition: all 0.5s;
+
+  font-family: regularText;
+}
+
+@font-face {
+  font-family: regularText;
+  src: url(/fonts/regular-text-OptimaEL-Text.ttf);
+}
+
+/* .airy-lotion-items {
+  padding-left: 30px;
+  letter-spacing: 3px;
+} */
+
+.foam-cleanser-items-head {
+  font-size: 30px;
+  line-height: 40px;
+
+  transform: translateY(40px);
+  transition: all 0.7s;
+
+  padding-left: 30px;
+  letter-spacing: 3px;
+}
+
+.foam-cleanser-items-price {
+  font-size: 22px;
+  line-height: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s;
+
+  padding-left: 30px;
+  letter-spacing: 3px;
+}
+
+.foam-cleanser-container:hover .foam-cleanser-overlay {
+  opacity: 1;
+  border-radius: 10px;
+  & .foam-cleanser-items-head {
+    transform: translateY(0px);
+  }
+  & .foam-cleanser-items-price {
+    transform: translateY(0px);
+    transition-delay: 0.4s;
+    opacity: 1;
+  }
+}
+
+/* soft creme mask */
+.soft-creme-container {
+  width: 300px;
+  height: 400px;
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background: url(/photos/soft-creme-maskestee\ 34.jpg);
+  background-color: #1d1d1f;
+  background-size: cover;
+  /* cursor: pointer; */
+  border-radius: 10px;
+
+  -webkit-box-shadow: 0 0 5px #1d1d1f;
+  box-shadow: 0 0 5px #1d1d1f;
+}
+
+.soft-creme-overlay {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+
+  background: #db1d4d;
+  color: #f5f5f7;
+  opacity: 0;
+  transition: all 0.5s;
+
+  font-family: regularText;
+}
+
+@font-face {
+  font-family: regularText;
+  src: url(/fonts/regular-text-OptimaEL-Text.ttf);
+}
+
+/* .airy-lotion-items {
+  padding-left: 30px;
+  letter-spacing: 3px;
+} */
+
+.soft-creme-items-head {
+  font-size: 30px;
+  line-height: 40px;
+
+  transform: translateY(40px);
+  transition: all 0.7s;
+
+  padding-left: 30px;
+  letter-spacing: 3px;
+}
+
+.soft-creme-items-price {
+  font-size: 22px;
+  line-height: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s;
+
+  padding-left: 30px;
+  letter-spacing: 3px;
+}
+
+.soft-creme-container:hover .soft-creme-overlay {
+  opacity: 1;
+  border-radius: 10px;
+  & .soft-creme-items-head {
+    transform: translateY(0px);
+  }
+  & .soft-creme-items-price {
+    transform: translateY(0px);
+    transition-delay: 0.4s;
+    opacity: 1;
+  }
+}
+
+/* radiant essence lotion */
+.radiant-essence-container {
+  width: 300px;
+  height: 400px;
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background: url(/photos/radiant-essence-lotion.jpg);
+  background-color: #1d1d1f;
+  background-size: cover;
+  /* cursor: pointer; */
+  border-radius: 10px;
+
+  -webkit-box-shadow: 0 0 5px #1d1d1f;
+  box-shadow: 0 0 5px #1d1d1f;
+}
+
+.radiant-essence-overlay {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 2fr 1fr;
+
+  background: #db1d4d;
+  color: #f5f5f7;
+  opacity: 0;
+  transition: all 0.5s;
+
+  font-family: regularText;
+}
+
+@font-face {
+  font-family: regularText;
+  src: url(/fonts/regular-text-OptimaEL-Text.ttf);
+}
+
+/* .airy-lotion-items {
+  padding-left: 30px;
+  letter-spacing: 3px;
+} */
+
+.radiant-essence-items-head {
+  font-size: 30px;
+  line-height: 40px;
+
+  transform: translateY(40px);
+  transition: all 0.7s;
+
+  padding-left: 30px;
+  letter-spacing: 3px;
+}
+
+.radiant-essence-items-price {
+  font-size: 22px;
+  line-height: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s;
+
+  padding-left: 30px;
+  letter-spacing: 3px;
+}
+
+.radiant-essence-container:hover .radiant-essence-overlay {
+  opacity: 1;
+  border-radius: 10px;
+  & .radiant-essence-items-head {
+    transform: translateY(0px);
+  }
+  & .radiant-essence-items-price {
+    transform: translateY(0px);
+    transition-delay: 0.4s;
+    opacity: 1;
+  }
+}
+
+.qna-section {
+  /* width: 300px;
+  height: 200px; */
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.qna-text-section {
+  margin-right: 50px;
+  margin-left: 80px;
+}
+
+.qna-video-play {
+  width: 500px;
+  height: 600px;
+  margin-right: 80px;
+  margin-left: 50px;
+}
+
+.qna-header {
+  font-family: regularText;
+  color: #1d1d1f;
+  font-size: 30px;
+}
+
+.qna-paragraph {
+  font-family: regularText;
+  color: #1d1d1f;
+  font-size: 20px;
+}
+
+footer {
+  background-color: #db1d4d;
+  font-family: regularText;
+}
+
+.p-footer {
+  color: #f5f5f7;
+  margin-left: 80px;
+  margin-right: 80px;
+  text-align: center;
+}
+
+.membership-hero {
+  background-image: url(/photos/estee\ 11.png);
+  height: 300px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #f5f5f7;
+  /* padding: 20px; */
+  font-family: myFont;
+}
+
+.membership-p {
+  margin-left: 80px;
+  margin-right: 80px;
+  font-size: 20px;
+}
+
+.shop-button-membership {
+  font-weight: 500;
+  padding: 12px 22px;
+  background-color: transparent;
+  color: #f5f5f7;
+  border-radius: 10px;
+  border: 1px solid #f5f5f7;
+  transition: 0.2s;
+  font-family: myFont;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.shop-button-membership:hover {
+  background-color: #db1d4d;
+  color: #f5f5f7;
+}
+
+.sectionImage {
+  display: flex;
+}
+
+.aboutImage {
+  width: 500px;
+  margin-left: 80px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  margin-right: 50px;
+}
+
+.aboutTextSection {
+  margin-right: 80px;
+  margin-top: 80px;
+}
+
+.aboutHeader {
+  font-family: myFont;
+}
+
+.aboutTextParagraph {
+  font-family: regularText;
+}
+
+/* MEMBERSHIP PAGE STYLE STARTS HERE*/
+
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  display: flex;
+  background-image: url(/photos/estee\ 11.png);
+}
+
+.membershipForm {
+  border-radius: 5px;
+  width: 400px;
+  background: white;
+  padding: 25px;
+}
+
+.membershipTitle {
+  color: #1d1d1f;
+  /* background: #db1d4d; */
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 25px;
+  text-transform: uppercase;
+  /* margin-top: -25px; */
+  margin-left: -25px;
+  margin-right: -25px;
+  font-family: myFont;
+}
+
+.membershipWrap {
+  margin-top: 15px;
+  margin-right: 15px;
+  font-family: myFont;
+}
+
+.membershipWrap .input_grp {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 15px;
+  font-family: myFont;
+}
+
+.membershipWrap .input_grp:last-child {
+  margin-bottom: 0;
+  font-family: myFont;
+}
+
+.membershipWrap .input_grp label {
+  margin-bottom: 3px;
+  color: #1d1d1f;
+  display: block;
+  font-family: myFont;
+}
+
+.membershipWrap .input_grp input[type="text"] {
+  width: 165px;
+  font-family: myFont;
+}
+
+.membershipWrap input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border-radius: 3px;
+  border: 1.3px solid #1d1d1f;
+  font-family: myFont;
+}
+
+.membershipWrap input[type="text"]:focus {
+  border-color: #1d1d1f;
+  font-family: myFont;
+}
+
+.membershipWrap ul {
+  padding: 8px 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid rgb(115, 185, 235); */
+  width: 70%;
+  background: #db1d4d;
+  margin-left: 15%;
+  color: #f5f5f7;
+  list-style: none;
+  font-family: myFont;
+}
+
+.membershipWrap ul li:first-child {
+  margin-right: 15px;
+}
+
+.membershipWrap ul .radioWrap {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.membershipWrap ul .radioWrap .input_radio {
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.membershipWrap ul .radioWrap span {
+  display: inline-block;
+  font-size: 17px;
+  padding: 3px 15px;
+  border-radius: 15px;
+  color: #f5f5f7;
+}
+
+.membershipWrap .input_grp:checked ~ span {
+  background: #db1d4d;
+  color: #f5f5f7;
+}
+
+.membershipWrap .submitButton {
+  font-size: 17px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 100%;
+  background: #db1d4d;
+  padding: 10px;
+  border: 0;
+  color: #f5f5f7;
+  font-family: myFont;
+}
